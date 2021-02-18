@@ -22,8 +22,6 @@ def clear():
     kodea = erantzuna.status_code
     deskribapena = erantzuna.reason
     print(str(kodea) + " " + deskribapena)
-    edukia = erantzuna.content
-    print(edukia)
 
 def getList():
 
@@ -40,14 +38,13 @@ def getList():
     i = 0
     if len(lista)>0:
         channelKeys = [None] * len(lista)
+        print(str(len(lista)) + " kanal daude, zein erabili nahi duzu?")
         id = [None] * len(lista)
         for x in lista:
             id[i] = x['id']
             channelKeys[i] = x['api_keys'][0]['api_key']
+            print(x['name'])
             i += 1
-        print(str(len(id)) + " kanal daude, zein erabili nahi duzu?")
-        for j in id:
-            print(j)
         aukera = int(input("Sartu aukera \n"))
 
         global channelKey
